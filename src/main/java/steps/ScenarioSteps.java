@@ -23,18 +23,18 @@ public class ScenarioSteps {
         mainPageSteps.selectSubMenuItem(string);
     }
 
-    @Когда("на странице {string} в блоке {string} нажимаем \"Подробнее\"")
+    @Когда("на странице \"СберСтрахование\" в блоке {string} нажимаем \"Подробнее\"")
     public void на_странице_в_блоке_нажимаем(String string) {
         insurancePageSteps.selectMenuItem(string);
     }
 
-    @Когда("на странице {string} проверяем наличие заголовка {string}")
+    @Когда("на странице \"Страхование путешественников\" проверяем наличие заголовка {string}")
     public void на_странице_проверяем_наличие_заголовка(String string) {
         travelInsurancePageSteps.checkTitle(string);
     }
 
-    @Когда("на странице {string} нажимаем \"Оформить Онлайн\"")
-    public void на_странице_нажимаем_Оформить_Онлайн(String string) {
+    @Когда("на странице \"Страхование путешественников\" нажимаем \"Оформить Онлайн\"")
+    public void на_странице_нажимаем_Оформить_Онлайн() {
         travelInsurancePageSteps.proceed();
     }
 
@@ -45,7 +45,7 @@ public class ScenarioSteps {
 
     @Когда("на вкладке \"Выбор полиса\" нажимаем \"Оформить\"")
     public void на_вкладке_Выбор_полиса_нажимаем_Оформить() {
-        travelInsuranceFirstFormPageSteps.selectSum("1");
+        travelInsuranceFirstFormPageSteps.proceed();
     }
 
     @Когда("на вкладке \"Оформление\" заполняем поля данными:")

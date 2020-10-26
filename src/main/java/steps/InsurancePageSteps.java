@@ -7,7 +7,6 @@ public class InsurancePageSteps {
 
     InsurancePage insurancePage = new InsurancePage();
 
-    @Step("В меню выбираем пункт \"{0}\"")
     public void selectMenuItem(String item) {
         insurancePage.selectMenuItem(item);
     }

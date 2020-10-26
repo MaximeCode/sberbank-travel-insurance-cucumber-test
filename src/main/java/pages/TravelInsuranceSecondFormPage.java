@@ -50,22 +50,22 @@ public class TravelInsuranceSecondFormPage extends BasePage {
         click(continueButton);
     }
 
-    public void checkWarning() {
-        Assert.assertEquals("При заполнении данных произошла ошибка", warningElement.getText());
+    public void checkWarning(String text) {
+        Assert.assertEquals("Текст сообщения не соотвествует ожидаемому.", text, warningElement.getText());
     }
 
-    void fillField(WebElement field, String value) {
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(field));
+    public void fillField(String name, String value) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getInput(name)));
         element.click();
         element.clear();
         element.sendKeys(value);
     }
 
-    void checkField(WebElement field, String value) {
-        Assert.assertEquals(value, field.getAttribute("value"));
+    public void checkField(String name, String value) {
+        Assert.assertEquals(value, getInput(name).getAttribute("value"));
     }
 
-    WebElement getInput(String name) {
+    private WebElement getInput(String name) {
         switch (name) {
             case "фамилия застрахованного":
                 return surnameInput;

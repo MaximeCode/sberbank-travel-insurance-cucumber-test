@@ -4,6 +4,8 @@ package steps;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.ru.Когда;
 
+import java.util.Map;
+
 public class ScenarioSteps {
     MainPageSteps mainPageSteps = new MainPageSteps();
     InsurancePageSteps insurancePageSteps = new InsurancePageSteps();
@@ -47,22 +49,22 @@ public class ScenarioSteps {
     }
 
     @Когда("на вкладке \"Оформление\" заполняем поля данными:")
-    public void на_вкладке_Оформление_заполняем_поля_данными(DataTable dataTable) {
-        travelInsuranceSecondFormPageSteps.fillSurname(dataTable);
+    public void на_вкладке_Оформление_заполняем_поля_данными(Map<String, String> data) {
+        data.forEach((k, v) -> travelInsuranceSecondFormPageSteps.fillField(k, v));
     }
 
     @Когда("на вкладке \"Оформление\" проверяем правильность заполнения полей:")
-    public void на_вкладке_Оформление_проверяем_правильность_заполнения_полей(DataTable dataTable) {
-//        travelInsuranceSecondFormPageSteps.fillSurname(string);
+    public void на_вкладке_Оформление_проверяем_правильность_заполнения_полей(Map<String, String> data) {
+        data.forEach((k, v) -> travelInsuranceSecondFormPageSteps.fillField(k, v));
     }
 
     @Когда("на вкладке \"Оформление\" нажимаем \"Продолжить\"")
-    public void на_вкладке_Оформление_нажимаем_Продолжить(String string) {
-        travelInsuranceSecondFormPageSteps.fillSurname(string);
+    public void на_вкладке_Оформление_нажимаем_Продолжить() {
+        travelInsuranceSecondFormPageSteps.proceed();
     }
 
     @Когда("на вкладке \"Оформление\" проверяем, что появилось сообщение {string}")
     public void на_вкладке_Оформление_проверяем_что_появилось_сообщение(String string) {
-        travelInsuranceSecondFormPageSteps.fillSurname(string);
+        travelInsuranceSecondFormPageSteps.checkWarning(string);
     }
 }

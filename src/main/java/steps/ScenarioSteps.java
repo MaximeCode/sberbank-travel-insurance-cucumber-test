@@ -48,7 +48,7 @@ public class ScenarioSteps {
 
     @Когда("на вкладке \"Оформление\" заполняем поля данными:")
     public void на_вкладке_Оформление_заполняем_поля_данными(DataTable dataTable) {
-//        travelInsuranceSecondFormPageSteps.fillSurname(dataTable);
+        travelInsuranceSecondFormPageSteps.fillSurname(dataTable);
     }
 
     @Когда("на вкладке \"Оформление\" проверяем правильность заполнения полей:")

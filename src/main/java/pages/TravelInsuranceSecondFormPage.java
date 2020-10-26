@@ -46,116 +46,6 @@ public class TravelInsuranceSecondFormPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class, 'alert-form')]")
     private WebElement warningElement;
 
-    public TravelInsuranceSecondFormPage fillSurname(String surname) {
-        fillField(surnameInput, surname);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillName(String name) {
-        fillField(nameInput, name);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillBirthDate(String birthDate) {
-        fillField(birthDateInput, birthDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPersonLastName(String personLastName) {
-        fillField(personLastNameInput, personLastName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPersonFirstName(String personFirstName) {
-        fillField(personFirstNameInput, personFirstName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPersonMiddleName(String personMiddleName) {
-        fillField(personMiddleNameInput, personMiddleName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPersonBirthDate(String personBirthDate) {
-        fillField(personBirthDateInput, personBirthDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPassportSeries(String passportSeries) {
-        fillField(passportSeriesInput, passportSeries);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillPassportNumber(String passportNumber) {
-        fillField(passportNumberInput, passportNumber);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillDocumentDate(String documentDate) {
-        fillField(documentDateInput, documentDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage fillDocumentIssue(String documentIssue) {
-        fillField(documentIssueInput, documentIssue);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkSurname(String surname) {
-        checkField(surnameInput, surname);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkName(String name) {
-        checkField(nameInput, name);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkBirthDate(String birthDate) {
-        checkField(birthDateInput, birthDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPersonLastName(String personLastName) {
-        checkField(personLastNameInput, personLastName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPersonFirstName(String personFirstName) {
-        checkField(personFirstNameInput, personFirstName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPersonMiddleName(String personMiddleName) {
-        checkField(personMiddleNameInput, personMiddleName);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPersonBirthDate(String personBirthDate) {
-        checkField(personBirthDateInput, personBirthDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPassportSeries(String passportSeries) {
-        checkField(passportSeriesInput, passportSeries);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkPassportNumber(String passportNumber) {
-        checkField(passportNumberInput, passportNumber);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkDocumentDate(String documentDate) {
-        checkField(documentDateInput, documentDate);
-        return this;
-    }
-
-    public TravelInsuranceSecondFormPage checkDocumentIssue(String documentIssue) {
-        checkField(documentIssueInput, documentIssue);
-        return this;
-    }
-
     public void proceed() {
         click(continueButton);
     }
@@ -173,5 +63,33 @@ public class TravelInsuranceSecondFormPage extends BasePage {
 
     void checkField(WebElement field, String value) {
         Assert.assertEquals(value, field.getAttribute("value"));
+    }
+
+    WebElement getInput(String name) {
+        switch (name) {
+            case "фамилия застрахованного":
+                return surnameInput;
+            case "имя застрахованного":
+                return nameInput;
+            case "дата рождения застрахованного":
+                return birthDateInput;
+            case "фамилия страхователя":
+                return personLastNameInput;
+            case "имя страхователя":
+                return personFirstNameInput;
+            case "отчество страхователя":
+                return personMiddleNameInput;
+            case "дата рождения страхователя":
+                return personBirthDateInput;
+            case "серия паспорта страхователя":
+                return passportSeriesInput;
+            case "номер паспорта страхователя":
+                return passportNumberInput;
+            case "дата выдачи паспорта страхователя":
+                return documentDateInput;
+            case "кем выдан паспорт страхователя":
+                return documentIssueInput;
+            default: throw new Error("Элемент \"" + name + "\" не найден.");
+        }
     }
 }

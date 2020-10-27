@@ -50,7 +50,7 @@ public class ScenarioSteps {
 
     @Когда("на вкладке \"Оформление\" заполняем поля данными:")
     public void на_вкладке_Оформление_заполняем_поля_данными(Map<String, String> data) {
-        data.forEach((k, v) -> travelInsuranceSecondFormPageSteps.fillField(k, v));
+        data.forEach(travelInsuranceSecondFormPageSteps::fillField);
     }
 
     @Когда("на вкладке \"Оформление\" проверяем правильность заполнения полей:")

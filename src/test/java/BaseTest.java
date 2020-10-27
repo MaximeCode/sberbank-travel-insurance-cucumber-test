@@ -1,16 +1,16 @@
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import steps.BaseSteps;
 
 public class BaseTest {
 
-    @BeforeClass
-    public static void beforeTest() {
-        BaseSteps.beforeSteps();
+    @Before
+    public static void setUp() {
+        BaseSteps.setUp();
     }
 
-    @AfterClass
-    public static void afterTest() {
-        BaseSteps.afterSteps();
+    @After
+    public static void tearDown() {
+        BaseSteps.tearDown();
     }
 }

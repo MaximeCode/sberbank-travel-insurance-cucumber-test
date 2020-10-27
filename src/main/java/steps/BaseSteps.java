@@ -1,7 +1,5 @@
 package steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -17,8 +15,7 @@ public class BaseSteps {
 
     private static WebDriver driver;
 
-    @Before
-    public static void beforeSteps() {
+    public static void setUp() {
 
         Properties properties = TestProperties.getInstance().getProperties();
         String browser = properties.getProperty("browser");
@@ -36,8 +33,7 @@ public class BaseSteps {
         driver.get(properties.getProperty("url"));
     }
 
-    @After
-    public static void afterSteps() {
+    public static void tearDown() {
         driver.quit();
     }
 

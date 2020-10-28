@@ -1,6 +1,5 @@
 package steps;
 
-import io.qameta.allure.Step;
 import pages.TravelInsuranceSecondFormPage;
 
 public class TravelInsuranceSecondFormPageSteps {

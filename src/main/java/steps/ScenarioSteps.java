@@ -1,8 +1,8 @@
 package steps;
 
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.ru.Когда;
+
+import cucumber.api.java.ru.Когда;
 
 import java.util.Map;
 
@@ -13,22 +13,22 @@ public class ScenarioSteps {
     TravelInsuranceFirstFormPageSteps travelInsuranceFirstFormPageSteps = new TravelInsuranceFirstFormPageSteps();
     TravelInsuranceSecondFormPageSteps travelInsuranceSecondFormPageSteps = new TravelInsuranceSecondFormPageSteps();
 
-    @Когда("на главной странице в меню выбираем раздел {string}")
+    @Когда("на главной странице в меню выбираем раздел \"([^\"]*)\"")
     public void на_главной_странице_в_меню_выбираем_раздел(String string) {
         mainPageSteps.selectMenuItem(string);
     }
 
-    @Когда("на открывшемся на главной странице меню выбираем {string}")
+    @Когда("на открывшемся на главной странице меню выбираем \"([^\"]*)\"")
     public void на_открывшемся_на_главной_странице_меню_выбираем(String string) {
         mainPageSteps.selectSubMenuItem(string);
     }
 
-    @Когда("на странице \"СберСтрахование\" в блоке {string} нажимаем \"Подробнее\"")
+    @Когда("на странице \"СберСтрахование\" в блоке \"([^\"]*)\" нажимаем \"Подробнее\"")
     public void на_странице_в_блоке_нажимаем(String string) {
         insurancePageSteps.selectMenuItem(string);
     }
 
-    @Когда("на странице \"Страхование путешественников\" проверяем наличие заголовка {string}")
+    @Когда("на странице \"Страхование путешественников\" проверяем наличие заголовка \"([^\"]*)\"")
     public void на_странице_проверяем_наличие_заголовка(String string) {
         travelInsurancePageSteps.checkTitle(string);
     }
@@ -38,7 +38,7 @@ public class ScenarioSteps {
         travelInsurancePageSteps.proceed();
     }
 
-    @Когда("на вкладке \"Выбор полиса\" выбираем сумму страховой защиты {string}")
+    @Когда("на вкладке \"Выбор полиса\" выбираем сумму страховой защиты \"([^\"]*)\"")
     public void на_вкладке_Выбор_полиса_выбираем_сумму_страховой_защиты(String string) {
         travelInsuranceFirstFormPageSteps.selectSum(string);
     }
@@ -63,7 +63,7 @@ public class ScenarioSteps {
         travelInsuranceSecondFormPageSteps.proceed();
     }
 
-    @Когда("на вкладке \"Оформление\" проверяем, что появилось сообщение {string}")
+    @Когда("на вкладке \"Оформление\" проверяем, что появилось сообщение \"([^\"]*)\"")
     public void на_вкладке_Оформление_проверяем_что_появилось_сообщение(String string) {
         travelInsuranceSecondFormPageSteps.checkWarning(string);
     }

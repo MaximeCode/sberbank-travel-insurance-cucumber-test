@@ -1,12 +1,12 @@
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources",
         glue = "steps",
-        plugin = "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm",
+        plugin = "io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm",
         tags = "@All")
 public class Runner {
 }
